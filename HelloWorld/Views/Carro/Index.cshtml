@@ -1,0 +1,40 @@
+﻿@model IEnumerable<HelloWorld.Models.Carro>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Todos os carros</h1>
+
+<a asp-action="NovoCarro" class="btn btn-primary">Novo Carro</a>
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.CarroId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Marca)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Modelo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ano)</td>
+                    <td>
+                        <a asp-action="AtualizarCarro" asp-route-id="@item.CarroId" class="btn btn-info">Atualizar</a>
+                        <a asp-action="DetalhesCarro" asp-route-id="@item.CarroId" class="btn btn-warning">Detalhes</a>
+                        <a asp-action="ExcluirCarro" asp-route-id="@item.CarroId" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

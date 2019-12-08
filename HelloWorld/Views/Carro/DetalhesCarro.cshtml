@@ -1,0 +1,31 @@
+﻿@model HelloWorld.Models.Carro
+@{
+    ViewData["Title"] = "DetalhesCarro";
+}
+
+<h1>Detalhes</h1>
+
+<div class="row">
+    <div class="col">
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Detalhes do carro @Html.DisplayFor(model => Model.Marca)</div>
+            </div>
+
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Id:</strong> @Html.DisplayFor(model => Model.CarroId)</li>
+                    <li class="list-group-item"><strong>Marca:</strong> @Html.DisplayFor(model => Model.Marca)</li>
+                    <li class="list-group-item"><strong>Modelo:</strong> @Html.DisplayFor(model => Model.Modelo)</li>
+                    <li class="list-group-item"><strong>Ano:</strong> @Html.DisplayFor(model => Model.Ano)</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a asp-action="Index">Voltar</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
